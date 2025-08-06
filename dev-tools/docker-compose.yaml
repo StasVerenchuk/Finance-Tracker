@@ -1,0 +1,17 @@
+services:
+  mysql:
+   image: mysql:8.0.39
+   container_name: mysql_db
+   environment:
+     MYSQL_ROOT_PASSWORD: supersecretrootpass
+     MYSQL_DATABASE: FinanceTrackerDb
+     MYSQL_USER: TestUser
+     MYSQL_PASSWORD: 123
+   ports:
+     - "3307:3306"
+   volumes:
+     - finance-tracker-db-data:/var/lib/mysql
+   restart: always
+
+volumes:
+  finance-tracker-db-data:
