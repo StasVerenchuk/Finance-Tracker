@@ -22,10 +22,10 @@ public class CustomUserDetailsService implements UserDetailsService{
 	}
 	
 	@Override
-    public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        User user = userRepository.findByUserNameOrEmail(usernameOrEmail, usernameOrEmail)
-                .orElseThrow(() -> new UsernameNotFoundException("User not exists by " + usernameOrEmail + " Username or Email"));
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with email " + email));
 
         return org.springframework.security.core.userdetails.User
                 .withUsername(user.getEmail())   // краще брати email із БД, а не те що ввів користувач

@@ -2,6 +2,8 @@ package com.stanislav.financetracker.security;
 
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,9 +23,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 
 	private JwtTokenProvider jwtTokenProvider;
 	
-	private UserDetailsService userDetailsService;
+	private CustomUserDetailsService userDetailsService;
 	
-	public JwtAuthenticationFilter(JwtTokenProvider jwtTokenProvider, UserDetailsService userDetailsService) {
+	private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
+	
+	public JwtAuthenticationFilter(JwtTokenProvider jwtTokenProvider, CustomUserDetailsService userDetailsService) {
 		this.jwtTokenProvider = jwtTokenProvider;
 		this.userDetailsService = userDetailsService;
 	}
@@ -34,7 +38,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 		String token = getTokenFromRequest(request);
 		
 		if(StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)) {
-			String username = jwtTokenProvider.getUsername(token);
+			String username = jwtTokenProvider.getUsernameFromToken(token);
 			
 			UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 			
