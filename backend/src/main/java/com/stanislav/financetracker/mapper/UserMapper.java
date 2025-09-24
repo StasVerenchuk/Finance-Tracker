@@ -29,9 +29,15 @@ public class UserMapper {
 	}
 	
 	// Mapping User -> AuthResponse
-	public AuthResponse toAuthResponse(String accessToken, String refreshToken) {
-		AuthResponse response = new AuthResponse(accessToken, refreshToken);
-		
-		return response;
-	}
+//	public AuthResponse toAuthResponse(String accessToken) {
+//		AuthResponse response = new AuthResponse(accessToken);
+//		
+//		return response;
+//	}
+	
+//	public AuthResponse toAuthResponse(String accessToken, String refreshToken) {
+//		AuthResponse response = new AuthResponse(accessToken, refreshToken);
+//		
+//		return response;
+//	}
 }

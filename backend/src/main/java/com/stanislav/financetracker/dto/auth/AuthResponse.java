@@ -10,20 +10,48 @@ package com.stanislav.financetracker.dto.auth;
 
 public class AuthResponse {
 
+	private Long id;
+	private String email;
 	private String accessToken;
-	private String refreshToken;
+	private String type = "Bearer";
+	//private String refreshToken;
 	
 	// Constructors
 	public AuthResponse() {
 		
 	}
 	
-	public AuthResponse(String accessToken, String refreshToken) {
+	public AuthResponse(Long id, String email, String accessToken) {
+		this.id = id;
+		this.email = email;
 		this.accessToken = accessToken;
-		this.refreshToken = refreshToken;
 	}
 	
+//	public AuthResponse(String accessToken, String refreshToken) {
+//		this.accessToken = accessToken;
+//		this.refreshToken = refreshToken;
+//	}
+	 
+	
 	// Getters/Setters
+	// Id
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	// Email
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	// Access Token
 	public String getAccessToken() {
 		return accessToken;
@@ -33,12 +61,22 @@ public class AuthResponse {
 		this.accessToken = accessToken;
 	}
 	
-	// Refresh Token
-	public String getRefreshToken() {
-		return refreshToken;
+	//Token type
+	public String getTokenType() {
+		return type;
 	}
 	
-	public void setRefreshToken(String refreshToken) {
-		this.refreshToken = refreshToken;
+	public void setTokenType(String tokenType) {
+		this.type = tokenType;
 	}
+	
+	// Refresh Token
+//	public String getRefreshToken() {
+//		return refreshToken;
+//	}
+//	
+//	public void setRefreshToken(String refreshToken) {
+//		this.refreshToken = refreshToken;
+//	}
+	 
 }
