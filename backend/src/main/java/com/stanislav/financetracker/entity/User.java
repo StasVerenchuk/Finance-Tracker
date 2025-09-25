@@ -74,6 +74,10 @@ public class User {
 		return id;
 	}
 	
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 	// Email
 	public String getEmail() {
 		return email;
