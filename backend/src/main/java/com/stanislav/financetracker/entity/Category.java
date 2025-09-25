@@ -1,5 +1,7 @@
 package com.stanislav.financetracker.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -10,6 +12,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 /*
  * @author Stanislav Verenchuk
@@ -39,6 +42,9 @@ public class Category {
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+	
+	@OneToMany(mappedBy = "category")
+	private List<Transaction> transactions;
 	
 	// Constructors
 	public Category() {
@@ -93,5 +99,9 @@ public class Category {
 	
 	public void setUser(User user) {
 		this.user = user;
+	}
+	
+	public List<Transaction> getTransactions(){
+		return transactions;
 	}
 }
