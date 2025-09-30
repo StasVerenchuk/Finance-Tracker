@@ -75,6 +75,6 @@ public class CategoryServiceImpl implements CategoryService {
 			throw new IllegalArgumentException("Category not found for this user");
 		}
 		
-		repository.deleteByIdAndUserId(id, userId);
+		repository.delete(category.get());
 	}
 }
