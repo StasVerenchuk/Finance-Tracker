@@ -14,9 +14,10 @@ const Login = () => {
     try {
       const data = await login(email, password);
       localStorage.setItem('token', data.accessToken);
+      localStorage.setItem('userId', data.id)
       navigate('/');
     } catch (err) {
-      setError('Invalid email or password');
+      setError('Невірний логін або пароль');
     }
   };
 
