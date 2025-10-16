@@ -1,5 +1,6 @@
 package com.stanislav.financetracker.service.impl;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -23,7 +24,7 @@ public class AuthServiceImpl implements AuthService{
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
 	
-	public AuthServiceImpl(AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider,
+	public AuthServiceImpl(@Lazy AuthenticationManager authenticationManager, JwtTokenProvider jwtTokenProvider,
 			UserRepository userRepository, PasswordEncoder passwordEncoder) {
 		this.authenticationManager = authenticationManager;
 		this.jwtTokenProvider = jwtTokenProvider;
