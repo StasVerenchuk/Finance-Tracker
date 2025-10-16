@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
 
-/* ===== Загальні стилі ===== */
+/* ===== Повна висота для root ===== */
 html, body, #root {
   height: 100%;
   width: 100%;
@@ -9,31 +9,28 @@ html, body, #root {
   font-family: "Poppins", sans-serif;
 }
 
-/* ===== Контейнер сторінки ===== */
+/* ===== Основні стилі контейнера ===== */
 .container-login100 {
-  display: block; /* більше не флекс для центрованої мобільної верстки */
+  display: flex;
+  justify-content: center; /* центр по горизонталі */
+  align-items: center;     /* центр по вертикалі */
+  height: 100%;
   width: 100%;
-  min-height: 100vh;
   background: linear-gradient(135deg, #74b9ff, #0984e3);
-  padding: 60px 20px 40px; /* враховуємо navbar */
-  box-sizing: border-box;
 }
 
-/* ===== Блок контенту ===== */
+/* ===== Форма ===== */
 .wrap-login100 {
-  max-width: 900px; /* ширина для десктопу */
-  width: 100%;
-  margin: 0 auto; /* центр по горизонталі */
+  width: 400px;  /* фіксована ширина десктоп */
   background: #fff;
   border-radius: 15px;
   padding: 40px 55px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  box-sizing: border-box;
 }
 
 /* ===== Заголовок ===== */
 .login100-form-title {
-  font-size: 32px;
+  font-size: 30px;
   color: #333;
   text-align: center;
   text-transform: uppercase;
@@ -41,19 +38,7 @@ html, body, #root {
   margin-bottom: 30px;
 }
 
-/* ===== Контент сторінки Home ===== */
-.home-content p,
-.home-content ul {
-  margin-bottom: 15px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.home-content ul li {
-  margin-left: 20px;
-}
-
-/* ===== Кнопки та поля (для Login) ===== */
+/* ===== Поля вводу ===== */
 .wrap-input100 {
   position: relative;
   width: 100%;
@@ -77,6 +62,18 @@ html, body, #root {
   box-shadow: 0 0 5px rgba(9,132,227,0.6);
 }
 
+.focus-input100 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+/* ===== Кнопка ===== */
 .container-login100-form-btn {
   display: flex;
   justify-content: center;
@@ -111,11 +108,9 @@ html, body, #root {
   text-decoration: underline;
 }
 
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  color: #333;
-  background: #f7f7f7;
-}
+/* ===== Відступи ===== */
+.m-b-16 { margin-bottom: 16px; }
+.m-t-17 { margin-top: 17px; }
+.p-t-50 { padding-top: 50px; }
+.p-b-90 { padding-bottom: 90px; }
+.w-full { width: 100%; }
