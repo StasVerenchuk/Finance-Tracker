@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Categories from './pages/Categories';
+
 import './components/styles/Navbar.css';
 import './pages/styles/Login.css';
 import './App.css'
@@ -55,6 +57,7 @@ const App = () => {
           <Route path="/" element={isAuthenticated ? <HomePrivate /> : <HomePublic />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>

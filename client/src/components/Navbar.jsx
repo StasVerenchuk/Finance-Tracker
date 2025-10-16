@@ -18,6 +18,11 @@ const Navbar = () => {
                     Finance Tracker
                 </h1>
                 <div className="navbar-links">
+                    {isAuthenticated && (
+                        <>
+                            <Link to="/categories" className="navbar-btn">Категорії</Link>
+                        </>
+                    )}
                     {!isAuthenticated ? (
                         <>
                             <Link to="/login" className="navbar-btn">

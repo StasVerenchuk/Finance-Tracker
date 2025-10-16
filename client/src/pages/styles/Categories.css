@@ -1,0 +1,96 @@
+.container-categories {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #74b9ff, #0984e3);
+  min-height: 100vh;
+}
+
+.categories-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 40px;
+  width: 600px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.categories-title {
+  text-align: center;
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* ===== Форма ===== */
+.add-category-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.add-category-form input[type="text"],
+.add-category-form select,
+.add-category-form input[type="color"] {
+  flex: 1 1 auto;
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  padding: 0 15px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.add-category-form button {
+  height: 40px;
+  border: none;
+  border-radius: 25px;
+  padding: 0 20px;
+  background: #0984e3;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-category-form button:hover {
+  background: #74b9ff;
+}
+
+/* ===== Список категорій ===== */
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.category-item:hover {
+  background: #f0f0f0;
+}
+
+.delete-btn {
+  background: #ff4b5c;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.delete-btn:hover {
+  background: #ff7675;
+}
